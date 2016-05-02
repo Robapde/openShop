@@ -30,30 +30,45 @@ public class Login extends javax.swing.JFrame {
         panelBotonesLogin = new javax.swing.JPanel();
         clienteButton = new javax.swing.JButton();
         empresaButton = new javax.swing.JButton();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorioLogin = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frameLogin"); // NOI18N
         setResizable(false);
 
-        panelBotonesLogin.setLayout(new java.awt.GridLayout(1, 2));
+        panelBotonesLogin.setLayout(new java.awt.GridLayout(1, 2, 6, 6));
 
-        clienteButton.setText("Cliente");
+        clienteButton.setBackground(new java.awt.Color(0, 102, 255));
+        clienteButton.setForeground(new java.awt.Color(255, 255, 255));
+        clienteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user-128.png"))); // NOI18N
+        clienteButton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(255, 255, 255))); // NOI18N
+        clienteButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
+        clienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteButtonActionPerformed(evt);
+            }
+        });
         panelBotonesLogin.add(clienteButton);
 
-        empresaButton.setText("Empresa");
+        empresaButton.setBackground(new java.awt.Color(0, 102, 0));
+        empresaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa2.png"))); // NOI18N
+        empresaButton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(255, 255, 255))); // NOI18N
+        empresaButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa.png"))); // NOI18N
+        empresaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empresaButtonActionPerformed(evt);
+            }
+        });
         panelBotonesLogin.add(empresaButton);
 
-        jDesktopPane1.setOpaque(false);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioLoginLayout = new javax.swing.GroupLayout(escritorioLogin);
+        escritorioLogin.setLayout(escritorioLoginLayout);
+        escritorioLoginLayout.setHorizontalGroup(
+            escritorioLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        escritorioLoginLayout.setVerticalGroup(
+            escritorioLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 356, Short.MAX_VALUE)
         );
 
@@ -62,18 +77,33 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelBotonesLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorioLogin)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelBotonesLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void clienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteButtonActionPerformed
+        // TODO add your handling code here:
+        
+        clienteLogin cL = new clienteLogin();
+        escritorioLogin.add(cL);
+        cL.show();
+    }//GEN-LAST:event_clienteButtonActionPerformed
+
+    private void empresaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empresaButtonActionPerformed
+        // TODO add your handling code here:
+        empresaLogin eL = new empresaLogin();
+        escritorioLogin.add(eL);
+        eL.show();
+    }//GEN-LAST:event_empresaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +143,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton clienteButton;
     private javax.swing.JButton empresaButton;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorioLogin;
     private javax.swing.JPanel panelBotonesLogin;
     // End of variables declaration//GEN-END:variables
 }

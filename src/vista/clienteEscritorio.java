@@ -29,7 +29,7 @@ public class clienteEscritorio extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         panelBusqueda = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        tipoEmpresa = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -48,9 +48,10 @@ public class clienteEscritorio extends javax.swing.JFrame {
         faccturaC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 900));
+        setTitle("Tienda Libre");
+        setBackground(new java.awt.Color(51, 153, 255));
+        setIconImages(null);
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -65,7 +66,7 @@ public class clienteEscritorio extends javax.swing.JFrame {
 
         panelBusqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Buscador Empresas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        tipoEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jTextField1.setText("Nombre...");
 
@@ -79,7 +80,7 @@ public class clienteEscritorio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tipoEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBusquedaLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -91,7 +92,7 @@ public class clienteEscritorio extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tipoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -162,22 +163,26 @@ public class clienteEscritorio extends javax.swing.JFrame {
         botonesCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         botonesCliente.setLayout(new java.awt.GridLayout(1, 0, 6, 0));
 
+        MensajesC.setBackground(new java.awt.Color(255, 255, 255));
         MensajesC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/email.jpg"))); // NOI18N
         MensajesC.setBorder(javax.swing.BorderFactory.createTitledBorder("Mensajes"));
         MensajesC.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/email1.jpg"))); // NOI18N
         botonesCliente.add(MensajesC);
 
+        perfilC.setBackground(new java.awt.Color(255, 255, 255));
         perfilC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user-128.png"))); // NOI18N
         perfilC.setToolTipText("");
         perfilC.setBorder(javax.swing.BorderFactory.createTitledBorder("Perfil"));
         perfilC.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
         botonesCliente.add(perfilC);
 
+        favoritoC.setBackground(new java.awt.Color(255, 255, 255));
         favoritoC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estrella1.png"))); // NOI18N
         favoritoC.setBorder(javax.swing.BorderFactory.createTitledBorder("Favoritos"));
         favoritoC.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estrella2.png"))); // NOI18N
         botonesCliente.add(favoritoC);
 
+        faccturaC.setBackground(new java.awt.Color(255, 255, 255));
         faccturaC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/f1.png"))); // NOI18N
         faccturaC.setBorder(javax.swing.BorderFactory.createTitledBorder("Facturas"));
         faccturaC.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/f2.png"))); // NOI18N
@@ -194,8 +199,8 @@ public class clienteEscritorio extends javax.swing.JFrame {
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDesktopPane1)
-                    .addComponent(botonesCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)))
+                    .addComponent(botonesCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+                    .addComponent(jDesktopPane1)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +209,7 @@ public class clienteEscritorio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                     .addComponent(jDesktopPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -251,24 +256,24 @@ public class clienteEscritorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MensajesC;
+    public javax.swing.JButton MensajesC;
     private javax.swing.JPanel botonesCliente;
-    private javax.swing.JButton faccturaC;
-    private javax.swing.JButton favoritoC;
+    public javax.swing.JButton faccturaC;
+    public javax.swing.JButton favoritoC;
     private javax.swing.JPanel informacionUsuario;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel panelBusqueda;
     private javax.swing.JPanel panelEmpresas;
-    private javax.swing.JButton perfilC;
+    public javax.swing.JButton perfilC;
+    public javax.swing.JComboBox<String> tipoEmpresa;
     // End of variables declaration//GEN-END:variables
 }
