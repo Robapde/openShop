@@ -56,8 +56,11 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="152" max="32767" attributes="0"/>
-                  <Component id="jButton01" min="-2" pref="130" max="-2" attributes="0"/>
+                  <EmptySpace pref="159" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jButton01" pref="130" max="32767" attributes="0"/>
+                      <Component id="registroEmpresa" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -71,7 +74,9 @@
                   <Component id="jTextField02" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton01" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="registroEmpresa" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -88,6 +93,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton01">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jButton1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="registroEmpresa">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
